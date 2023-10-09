@@ -15,3 +15,5 @@ cd $HOME/.dotfiles
 source set_up_symlinks.sh
 source set_up_shell.sh
 source set_up_dependencies.sh
+
+echo " ✅ Everything set up successfully!"
