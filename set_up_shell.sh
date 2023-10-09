@@ -33,7 +33,7 @@ sudo rm -rf powerline-shell
 
 # Set up powerline-shell segment
 mkdir -p $HOME/.config/powerline-shell/
-ln -s $DOTFILES_DIR/powerline-shell-config.json $HOME/.config/powerline-shell/config.json
+ln -sf $DOTFILES_DIR/powerline-shell-config.json $HOME/.config/powerline-shell/config.json
 
 clone_or_update "https://github.com/zsh-users/zsh-syntax-highlighting.git" "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting"
 clone_or_update "https://github.com/zsh-users/zsh-autosuggestions" "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
