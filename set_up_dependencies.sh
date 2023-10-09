@@ -11,8 +11,12 @@ sudo yum update -y
 echo " ✅ Updated packages successfully!"
 
 echo " 📦 Installing rbenv"
+# These are rbenv dependencies
+sudo yum install git gcc make readline-devel openssl-devel libyaml-devel -y
 clone_or_update https://github.com/rbenv/rbenv.git ~/.rbenv
 eval "$($HOME/.rbenv/bin/rbenv init - zsh)"
+# Install ruby-build as an rbenv plugin
+clone_or_update https://github.com/rbenv/ruby-build.git "$(rbenv root)"/plugins/ruby-build
 echo " ✅ rbenv installed successfully!"
 
 echo " 📦 Installing Ruby"
