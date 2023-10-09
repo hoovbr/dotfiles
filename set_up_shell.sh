@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 # This script installs QoL tools to our shell, such as zsh, oh-my-zsh, powerline-shell and more.
 # Precondition: DOTFILES_DIR must be set and exist.

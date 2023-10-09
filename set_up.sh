@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/bin/bash
 
 ################################################################################
 ### Set up everything in the correct order
