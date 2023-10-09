@@ -4,8 +4,10 @@
 ### Set up everything in the correct order
 ################################################################################
 
+set -e # Immediately rethrows exceptions
+
 # Make the clone_or_update function available
-bash <(curl -s https://raw.githubusercontent.com/hoovbr/dotfiles/main/.aliases)
+source <(curl -s https://raw.githubusercontent.com/hoovbr/dotfiles/main/.aliases)
 
 clone_or_update "https://github.com/hoovbr/dotfiles.git" "$HOME/.dotfiles"
 cd $HOME/.dotfiles
