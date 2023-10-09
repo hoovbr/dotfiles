@@ -22,6 +22,8 @@ bash <(curl -s https://raw.githubusercontent.com/hoovbr/dotfiles/main/set_up.sh)
 source ~/.zshrc
 ```
 
+All the scripts in this repo are idempotent, which means you can run them multiple times and they will always produce the same results. Thus, if for some reason you need to run the commands above again (e.g. because they errored out), you can just run them again.
+
 ## Which shell settings and tools are we using?
 
 Here is some information about how we set up our shell and why we do so:
