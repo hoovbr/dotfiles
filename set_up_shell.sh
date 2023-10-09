@@ -14,7 +14,7 @@ sudo yum install util-linux-user -y
 sudo chsh -s $(which zsh) $(whoami)
 
 # Install oh-my-zsh
-if [ ! -d "$HOME/$HOME/.oh-my-zsh" ]; then
+if [ ! -d "$HOME/.oh-my-zsh" ]; then
   echo "Installing oh-my-zsh..."
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
 else
