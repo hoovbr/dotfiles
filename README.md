@@ -16,7 +16,7 @@ sudo yum update -y
 sudo yum install git -y
 
 # 3. Run the set up script
-bash <(curl -s https://raw.githubusercontent.com/hoovbr/dotfiles/master/set_up.sh)
+bash <(curl -s https://raw.githubusercontent.com/hoovbr/dotfiles/main/set_up.sh)
 ```
 
 ## Which shell settings and tools are we using?
