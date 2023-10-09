@@ -13,7 +13,7 @@ Run:
 # 1. Run the set up script
 bash <(curl -s https://raw.githubusercontent.com/hoovbr/dotfiles/main/set_up.sh)
 
-# 2. Restart the shell session
+# 2. Refresh the shell session
 source ~/.zshrc
 ```
 
