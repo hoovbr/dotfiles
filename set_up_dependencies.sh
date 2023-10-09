@@ -5,7 +5,6 @@
 ################################################################################
 
 set -e # Immediately rethrows exceptions
-set -x # Logs every command on shell
 
 echo " 📦 Updating packages"
 sudo yum update -y
