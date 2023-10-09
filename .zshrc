@@ -94,12 +94,6 @@ if [ -f "$HOME/.rbenv/bin/rbenv" ]; then
   eval "$($HOME/.rbenv/bin/rbenv init - zsh)"
 fi
 
-# https://zsh.sourceforge.io/Doc/Release/Options.html#index-NOMATCH
-# https://thoughtbot.com/blog/how-to-use-arguments-in-a-rake-task
-if which unsetopt > /dev/null; then
-  unsetopt nomatch
-fi
-
 # Initialize Homebrew if it's already installed
 if [ -f "~/.linuxbrew/bin/brew" ]; then
   eval $(~/.linuxbrew/bin/brew shellenv)
