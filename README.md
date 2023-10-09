@@ -17,6 +17,9 @@ sudo yum install git -y
 
 # 3. Run the set up script
 bash <(curl -s https://raw.githubusercontent.com/hoovbr/dotfiles/main/set_up.sh)
+
+# 4. Restart the shell session
+source ~/.zshrc
 ```
 
 ## Which shell settings and tools are we using?

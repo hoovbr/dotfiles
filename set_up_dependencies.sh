@@ -12,13 +12,10 @@ echo " ✅ Updated packages successfully!"
 
 echo " 📦 Installing rbenv"
 clone_or_update https://github.com/rbenv/rbenv.git ~/.rbenv
+eval "$($HOME/.rbenv/bin/rbenv init - zsh)"
 echo " ✅ rbenv installed successfully!"
 
-# We need to source .zshrc again to apply changes after isntalling rbenv
-source ~/.zshrc
-
 echo " 📦 Installing Ruby"
-
 RUBY_VERSION="$(cat $HOME/.ruby-version)"
 rbenv install
 rbenv global $RUBY_VERSION
@@ -36,5 +33,3 @@ echo " ✅ Redis installed successfully!"
 echo " 📦 Installing hub"
 sudo yum install hub -y
 echo " ✅ hub installed successfully!"
-
-source ~/.zshrc
