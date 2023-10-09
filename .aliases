@@ -1,0 +1,36 @@
+# Some handy ls aliases
+alias ll="ls -lA"
+alias la="ls -A"
+alias l="ls -CF"
+
+# cd to the hoov_rails directory and log in as hoov user
+alias hoov="cd /var/www/hoov/code/hoov_rails && sudo -u hoov -H bash -l"
+
+# Prints the $PATH env var, with line breaks instead of colons
+alias path="tr ':' '\n' <<< $PATH"
+
+# Logs useful debugging information about the system.
+function debug() {
+  echo -n "📦 Size of /tmp is at: " && du -h /tmp
+  echo -n "💿 Disk usage is at: " && df -h /dev/xvda1 | tail -n 1
+  echo "🥞 PostgreSQL status: $(sudo systemctl status postgresql)"
+  echo "💎 hoov status: $(sudo systemctl status hoov_rails)"
+}
+
+# Restarts postgresql, hoov_rails, and nginx services.
+function restart() {
+  sudo systemctl restart postgresql
+  echo "✅ Restarted postgresql"
+  sudo systemctl restart hoov_rails
+  echo "✅ Restarted hoov_rails"
+  sudo systemctl restart nginx
+  echo "✅ Restarted nginx"
+}
+
+# Stops hoov_rails service.
+function stop() {
+  sudo systemctl stop hoov_rails
+  echo "✅ Stopped hoov_rails"
+}
+
+alias python=python3

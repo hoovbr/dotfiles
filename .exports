@@ -1,0 +1,13 @@
+# Prevent oh-my-zsh from overriding the ~/.zshrc file.
+export KEEP_ZSHRC='yes'
+
+# Preferred editor for local and remote sessions
+export EDITOR='nano'
+
+# Prefer US English and use UTF-8.
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+export LANGUAGE=en_US.UTF-8
+
+# Handy reference to this directory.
+export DOTFILES_DIR="$HOME/.dotfiles"
