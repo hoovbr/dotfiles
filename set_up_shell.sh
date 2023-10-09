@@ -42,5 +42,3 @@ ln -sf $DOTFILES_DIR/powerline-shell-config.json $HOME/.config/powerline-shell/c
 
 clone_or_update "https://github.com/zsh-users/zsh-syntax-highlighting.git" "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting"
 clone_or_update "https://github.com/zsh-users/zsh-autosuggestions" "${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions"
-
-source ~/.zshrc
