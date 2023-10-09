@@ -14,7 +14,12 @@ sudo yum install util-linux-user -y
 sudo chsh -s $(which zsh) $(whoami)
 
 # Install oh-my-zsh
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+if [ ! -d "$HOME/$HOME/.oh-my-zsh" ]; then
+  echo "Installing oh-my-zsh..."
+  sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" "" --unattended
+else
+  echo "oh-my-zsh is already installed."
+fi
 
 # Install powerline-shell font "Meslo Slashed"
 clone_or_update https://github.com/powerline/fonts.git --depth=1
