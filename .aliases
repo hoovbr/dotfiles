@@ -33,4 +33,19 @@ function stop() {
   echo "✅ Stopped hoov_rails"
 }
 
+# Checks if a repo exists in a given directory, and if so, update it. Otherwise, clone it.
+function clone_or_update() {
+  repo_url="$1"
+  repo_dir="$2"
+  if [ -d "$repo_dir" ]; then
+    echo "Repository '$repo_url' already exists in '$repo_dir'. Updating it…"
+    (cd "$repo_dir" && git fetch && git pull)
+    echo "Repository '$repo_url' updated successfully."
+  else
+    echo "Cloning repository '$repo_url'…"
+    git clone "$repo_url" "$repo_dir"
+    echo "Repository '$repo_url' cloned successfully."
+  fi
+}
+
 alias python=python3

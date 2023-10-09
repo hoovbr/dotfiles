@@ -11,7 +11,7 @@ sudo yum update -y
 echo " ✅ Updated packages successfully!"
 
 echo " 📦 Installing rbenv"
-git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+clone_or_update https://github.com/rbenv/rbenv.git ~/.rbenv
 echo " ✅ rbenv installed successfully!"
 
 # We need to source .zshrc again to apply changes after isntalling rbenv
