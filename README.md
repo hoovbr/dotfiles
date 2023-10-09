@@ -2,7 +2,8 @@
 
 A bundle of dotfiles and scripts to help set up an EC2 instance running Amazon Linux from scratch.
 
-Before proceeding, if you want to run the scripts and use the dotfiles in this repo, make sure you know what are you doing! Settings applied here are highly opinionated and definitely don't suite everyone's needs. We suggest you to create your own set of dotfiles based on this repo.
+> **Note**
+> Before proceeding, if you want to run the scripts and use the dotfiles in this repo, make sure you know what are you doing! Settings applied here are highly opinionated and definitely don't suite everyone's needs. We suggest you to create your own set of dotfiles based on this repo.
 
 ## Installation Steps
 
