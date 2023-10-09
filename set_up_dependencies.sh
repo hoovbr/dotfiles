@@ -21,7 +21,7 @@ echo " ✅ rbenv installed successfully!"
 
 echo " 📦 Installing Ruby"
 RUBY_VERSION="$(cat $HOME/.ruby-version)"
-rbenv install
+rbenv install --skip-existing
 rbenv global $RUBY_VERSION
 echo " ✅ Ruby $RUBY_VERSION installed successfully!"
 
