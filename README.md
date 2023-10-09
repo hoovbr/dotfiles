@@ -10,16 +10,10 @@ A bundle of dotfiles and scripts to help set up an EC2 instance running Amazon L
 Run:
 
 ```sh
-# 1. Install system updates in the EC2 machine
-sudo yum update -y
-
-# 2. Install git
-sudo yum install git -y
-
-# 3. Run the set up script
+# 1. Run the set up script
 bash <(curl -s https://raw.githubusercontent.com/hoovbr/dotfiles/main/set_up.sh)
 
-# 4. Restart the shell session
+# 2. Restart the shell session
 source ~/.zshrc
 ```
 
