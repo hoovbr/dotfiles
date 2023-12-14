@@ -4,12 +4,16 @@
 # Precondition: DOTFILES_DIR must be set and exist.
 
 # Update packages first
-sudo yum update -y
+package_manager update -y || true # Ignore failures
 
 # Install zsh
-sudo yum install zsh -y
-# Install "util-linux-user" because "chsh" is not available by default. See https://superuser.com/a/1389273/599050
-sudo yum install util-linux-user -y
+package_manager install zsh -y
+
+# On Debian-based systems, 'util-linux-user' is not required as 'chsh' is typically available by default
+if ! command -v chsh >/dev/null 2>&1; then
+  package_manager install util-linux-user -y
+fi
+
 # Set the default shell to zsh
 sudo chsh -s $(which zsh) $(whoami)
 

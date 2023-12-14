@@ -33,6 +33,18 @@ function stop() {
   echo "✅ Stopped hoov_rails"
 }
 
+# Determines which package manager to use.
+function package_manager() {
+  if command -v yum >/dev/null 2>&1; then
+    sudo yum "$@"
+  elif command -v apt-get >/dev/null 2>&1; then
+    sudo apt-get "$@"
+  else
+    echo "Error: neither yum nor apt-get is available." >&2
+    exit 1
+  fi
+}
+
 # Checks if a repo exists in a given directory, and if so, update it. Otherwise, clone it.
 function clone_or_update() {
   repo_url="$1"

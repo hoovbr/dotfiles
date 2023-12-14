@@ -6,13 +6,12 @@
 
 set -e # Immediately rethrows exceptions
 
-# Install system updates in the EC2 machine
-sudo yum update -y
-# Install git
-sudo yum install git -y
-
-# Make the clone_or_update function available
+# Make the some utility functions available
 source <(curl -s https://raw.githubusercontent.com/hoovbr/dotfiles/main/.aliases)
+
+# Update the list of packages and install git if needed
+package_manager update -y || true # Ignore failures
+package_manager install git -y
 
 clone_or_update "https://github.com/hoovbr/dotfiles.git" "$HOME/.dotfiles"
 cd $HOME/.dotfiles
