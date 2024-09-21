@@ -57,7 +57,8 @@ rm -rf fonts
 # Install powerline-shell
 clone_or_update https://github.com/b-ryan/powerline-shell.git --depth=1
 cd powerline-shell
-sudo python3 setup.py install
+package_manager install python3-setuptools -y
+sudo python3 setup.py install -y
 cd ..
 sudo rm -rf powerline-shell
 
