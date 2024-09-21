@@ -16,8 +16,13 @@ package_manager install git -y
 clone_or_update "https://github.com/hoovbr/dotfiles.git" "$HOME/.dotfiles"
 cd $HOME/.dotfiles
 
+echo " 🕓 Setting up symlinks"
 source set_up_symlinks.sh
+
+echo " 🕓 Setting up shell"
 source set_up_shell.sh
+
+echo " 🕓 Setting up dependencies"
 source set_up_dependencies.sh
 
 echo " ✅ Everything set up successfully!"
