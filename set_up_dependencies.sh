@@ -29,25 +29,10 @@ echo " 📦 Installing hub"
 package_manager install hub -y
 echo " ✅ hub installed successfully!"
 
-echo " 📦 Installing Postgres"
-if command -v amazon-linux-extras >/dev/null 2>&1; then
-  sudo amazon-linux-extras install epel -y
-  sudo amazon-linux-extras install postgresql14 -y # Should be the same version we're using in the RDS
-elif command -v apt-get >/dev/null 2>&1; then
-  sudo apt-get install postgresql postgresql-contrib -y
-else
-  echo "Error: neither amazon-linux-extras nor apt-get is available, so Postgres couldn't be installed." >&2
-  exit 1
-fi
-echo " ✅ Postgres installed successfully!"
+sudo apt-get update
+sudo apt-get install docker.io docker-compose certbot python3-certbot-dns-route53 awscli
+sudo systemctl start docker
+sudo systemctl enable docker
 
-echo " 📦 Installing Redis"
-if command -v amazon-linux-extras >/dev/null 2>&1; then
-  sudo amazon-linux-extras install redis6 -y
-elif command -v apt-get >/dev/null 2>&1; then
-  sudo apt-get install redis-server -y
-else
-  echo "Error: neither amazon-linux-extras nor apt-get is available, so Redis couldn't be installed." >&2
-  exit 1
-fi
-echo " ✅ Redis installed successfully!"
+# If a nginx machine was set up, this was started by default. Let's stop this because we use our own dockerized nginx instance.
+sudo systemctl stop nginx
