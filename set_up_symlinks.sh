@@ -16,3 +16,5 @@ ln -sf $DOTFILES_DIR/.zshrc $HOME/.zshrc
 
 mkdir -p $HOME/.config/powerline-shell
 ln -sf $DOTFILES_DIR/powerline-shell-config.json $HOME/.config/powerline-shell/config.json
+
+sudo ln -sf $DOTFILES_DIR/docker-daemon.json /etc/docker/daemon.json
