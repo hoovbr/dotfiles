@@ -11,26 +11,26 @@ alias path="tr ':' '\n' <<< $PATH"
 
 # Logs useful debugging information about the system.
 function debug() {
-  echo -n "📦 Size of /tmp is at: " && du -h /tmp
-  echo -n "💿 Disk usage is at: " && df -h /dev/xvda1 | tail -n 1
-  echo "🥞 PostgreSQL status: $(sudo systemctl status postgresql)"
-  echo "💎 hoov status: $(sudo systemctl status hoov_rails)"
+  echo "💿 Disk usage:\n"
+  df -h
+  echo
+
+  echo "💿 Docker disk usage:\n"
+  docker system df
+  echo
+
+  echo "🪵 These are the Docker log files:\n"
+  sudo find /var/lib/docker/containers/ -type f -name "*-json.log" -exec du -h {} + | sort -rh
+  echo
 }
 
-# Restarts postgresql, hoov_rails, and nginx services.
-function restart() {
-  sudo systemctl restart postgresql
-  echo "✅ Restarted postgresql"
-  sudo systemctl restart hoov_rails
-  echo "✅ Restarted hoov_rails"
-  sudo systemctl restart nginx
-  echo "✅ Restarted nginx"
-}
-
-# Stops hoov_rails service.
-function stop() {
-  sudo systemctl stop hoov_rails
-  echo "✅ Stopped hoov_rails"
+function prune_docker() {
+  echo "👀 This is the current Docker disk stats:"
+  docker system df
+  echo "Reclaiming all unused Docker resources…"
+  docker system prune -a --volumes -f
+  echo "✅ Claimed all unused Docker resources. Docker disk stats:"
+  docker system df
 }
 
 # Determines which package manager to use.
