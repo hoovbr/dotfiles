@@ -61,3 +61,17 @@ function clone_or_update() {
 }
 
 alias python=python3
+
+# Cleans up Docker images, volumes, and systemd journal logs, freeing up space.
+function cleanup() {
+  echo "🧹 Cleaning up Docker images..."
+  docker image prune -af
+
+  echo "🧹 Cleaning up Docker volumes..."
+  docker volume prune -f
+
+  echo "🧹 Cleaning up systemd journal logs (older than 7 days)..."
+  journalctl --vacuum-time=7d
+
+  echo "✅ Cleanup done at $(date)"
+}
